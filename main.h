@@ -9,12 +9,14 @@
 #include <string.h>
 
 /**
- * 
+ * struct func_type
+ * @t: the specifier
+ * @f: associated function
  */
 typedef struct func_type
 {
-  char *t;
-  int (*f)(va_list);
+	char *t;
+	int (*f)(va_list);
 } func_t;
 
 int (*get_func(const char *format))(va_list);
