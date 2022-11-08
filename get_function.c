@@ -3,8 +3,8 @@
 /**
  * get_function - function to get the correct printing format
  *
- * @f: function pointer
- * Return: NULL or fun[i].g
+ * @format: string
+ * Return: NULL or p[i].f
  */
 
 int (*get_function(const char *format))(va_list)

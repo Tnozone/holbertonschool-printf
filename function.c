@@ -1,9 +1,9 @@
-#include"mian.h"
+#include"main.h"
 
 /**
  * print_char - print character
- * @ar: argument
- * Return: 0
+ * @args: argument
+ * Return: 1
  */
 
 int print_char(va_list args)
@@ -14,8 +14,8 @@ int print_char(va_list args)
 
 /**
  * print_str - prints a string
- * @ar: argument
- * Return: 0
+ * @args: argument
+ * Return: j
  */
 
 int print_str(va_list args)
@@ -35,12 +35,12 @@ int print_str(va_list args)
 
 /**
  * print_pct - prints a percentage
- * @p: percent
- * Return: 0
+ * @args: argument
+ * Return: 1
  */
 
-int print_pct(void)
+int print_pct(va_list args)
 {
-	write(1, "%", 1);
-	return (1);
+	(void)args;
+	return (write(1, "%", 1));
 }

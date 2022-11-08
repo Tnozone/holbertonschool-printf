@@ -5,10 +5,10 @@
 #include<stdarg.h>
 
 /**
- * struct prin - structure
+ * struct func_type - structure
  *
- * @prin: the specifier
- * @g: associated funtion
+ * @t: the specifier
+ * @f: associated function
  */
 
 typedef struct func_type
