@@ -9,15 +9,15 @@
 int _printf(const char *format, ...)
 {
 	fun_t fun[] = {
-		{"%c", print_char},
-		{"%s", print_str},
-		{"%%", print_pct},
+		{"c", print_char},
+		{"s", print_str},
+		{"%", print_pct},
 		{NULL, NULL}
 		};
 	
 	unsigned int n = 0;
 
-	va_list ar;
+	va_list args;
 
 	va_start(ar, format);
 

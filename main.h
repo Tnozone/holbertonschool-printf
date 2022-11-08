@@ -11,17 +11,17 @@
  * @g: associated funtion
  */
 
-typedef struct prin
+typedef struct func_type
 {
-	char *prin;
-	void (*g)(va_list ar);
-} fun_t;
+	char *t;
+	int (*f)(va_list);
+} func_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 int (*get_function(const char *format))(va_list);
-int print_char(va_list ar);
-int print_str(va_list ar);
+int print_char(va_list args);
+int print_str(va_list args);
 int print_pct(void);
 
 #endif

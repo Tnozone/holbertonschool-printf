@@ -9,19 +9,19 @@
 
 int (*get_function(const char *format))(va_list)
 {
-	fun_t fun[] = {
-		{"%c", print_char},
-		{"%s", print_str},
-		{"%%", print_pct},
+	fun_t p[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{"%", print_pct},
 		{NULL, NULL}
 		};
 
 	int i = 0;
 
-	while (fun[i].prin != NULL)
+	while (p[i].func_type != NULL)
 	{
-		if (*fun[i].prin == *format)
-			return (fun[i].g);
+		if (*p[i].func_type == *format)
+			return (p[i].t);
 		i++;
 	}
 	return (NULL);

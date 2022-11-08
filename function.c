@@ -6,9 +6,9 @@
  * Return: 0
  */
 
-int print_char(va_list ar)
+int print_char(va_list args)
 {
-	_putchar(va_arg(ar, int));
+	_putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -18,10 +18,10 @@ int print_char(va_list ar)
  * Return: 0
  */
 
-int print_str(va_list ar)
+int print_str(va_list args)
 {
 	int j;
-	char *str = va_arg(ar, char *)
+	char *str = va_arg(args, char *)
 
 	if (str == NULL)
 		str = "(null)";
@@ -29,7 +29,7 @@ int print_str(va_list ar)
 	for (j = 0; str[j]; j++)
 		;
 
-	write(1, s, j);
+	write(1, str, j);
 	return (j);
 }
 
