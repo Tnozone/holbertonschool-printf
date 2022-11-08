@@ -8,41 +8,32 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int n, i;
-	char *st;
-	char r;
+	unsigned int n = 0;
+	unsigned int i = 0;
+	unsigned int r = 0;
 	va_list ar;
 
 	va_start(ar, format);
 
-	if (format == NULL)
+	if (format[0] == '%' || format[1] == '\0' || format == NULL)
 		return (0);
 
-	for (n = 0; n < format; n++)
-		if (format[1] == '\0')
+	while (format[n] != '\0')
+	{
+		if (format[n] == '%')
 		{
-			_putchar(format[0]);
-			return (1);
+			i = 0;
+			while (get_function[i].prin != NULL)
+			{
+				if (format[n + 1] == get_function[i].prin[0])
+				{
+					r = r + get_function[i].g(ar);
+			}
+			i++;
 		}
-	st = va_arg(ar, char *);
-	for (i = 0; i < st; i++)
-		if (st[i] == '%' && st[i + 1] == 'c' && st[i + 2] == ' ')
-		{
-			st[i] = "";
-			st[i + 1] = get_function(format);
-		}
-		if (st[i] == '%' && st[i + 1] == 's' && st[i + 2] == ' ')
-		{
-			st[i] = ""; 
-			st[i + 1] = get_function(format);
-		}
-		if (st[i] == '%' && st[i + 1] == '%' && st[1 + 2] == ' ')
-		{
-			st[i] = ""; 
-		}
-	
-	write(1, st, i);
+		n++;
+	}
 
 	va_end(ar);
-	return (i - 1);
+	return (r);
 }
