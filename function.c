@@ -2,23 +2,29 @@
 
 /**
  * print_char - print character
- * @c: char
- * Return: char
+ * @ar: argument
+ * Return: 0
  */
 
-void print_char(format)
+void print_char(va_list ar)
 {
+	char c;
+	c = va_arg(ar, int);
+
 	_putchar(c);
 }
 
 /**
  * print_str - prints a string
- * @s: string
- * Return: string
+ * @ar: argument
+ * Return: 0
  */
 
-void print_str(*format)
+void print_str(va_list ar)
 {
+	char *s;
+	s = va_arg(ar, char *)
+
 	while (*s != '\0')
 		_putchar(s);
 }
@@ -26,10 +32,10 @@ void print_str(*format)
 /**
  * print_pct - prints a percentage
  * @p: percent
- * Return: '%'
+ * Return: 0
  */
 
-void print_pct(format)
+void print_pct(void)
 {
 	_putchar('%');
 }
