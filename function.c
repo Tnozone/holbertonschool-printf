@@ -11,7 +11,7 @@ void print_char(va_list ar)
 	char c;
 	c = va_arg(ar, int);
 
-	_putchar(c);
+	write(1, c, 1);
 }
 
 /**
@@ -22,11 +22,14 @@ void print_char(va_list ar)
 
 void print_str(va_list ar)
 {
+	int len = 0;
 	char *s;
 	s = va_arg(ar, char *)
 
-	while (*s != '\0')
-		_putchar(s);
+	for (int x = 0; s[x]; x++)
+		len++;
+
+	write(1, s, len);
 }
 
 /**
@@ -37,5 +40,5 @@ void print_str(va_list ar)
 
 void print_pct(void)
 {
-	_putchar('%');
+	write(1, "%", 1);
 }

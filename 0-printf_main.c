@@ -28,8 +28,10 @@ int _printf(const char *format, ...)
 				if (format[n + 1] == get_function[i].prin[0])
 				{
 					r = r + get_function[i].g(ar);
-			}
+			
+				}
 			i++;
+			}
 		}
 		n++;
 	}
