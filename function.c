@@ -6,12 +6,10 @@
  * Return: 0
  */
 
-void print_char(va_list ar)
+int print_char(va_list ar)
 {
-	char c;
-	c = va_arg(ar, int);
-
-	write(1, c, 1);
+	_putchar(va_arg(ar, int));
+	return (1);
 }
 
 /**
@@ -20,16 +18,19 @@ void print_char(va_list ar)
  * Return: 0
  */
 
-void print_str(va_list ar)
+int print_str(va_list ar)
 {
-	int len = 0;
-	char *s;
-	s = va_arg(ar, char *)
+	int j;
+	char *str = va_arg(ar, char *)
 
-	for (int x = 0; s[x]; x++)
-		len++;
+	if (str == NULL)
+		str = "(null)";
 
-	write(1, s, len);
+	for (j = 0; str[j]; j++)
+		;
+
+	write(1, s, j);
+	return (j);
 }
 
 /**
@@ -38,7 +39,8 @@ void print_str(va_list ar)
  * Return: 0
  */
 
-void print_pct(void)
+int print_pct(void)
 {
 	write(1, "%", 1);
+	return (1);
 }

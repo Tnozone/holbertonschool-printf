@@ -7,7 +7,7 @@
  * Return: NULL or fun[i].g
  */
 
-int (*get_function(char *f))(int, int)
+int (*get_function(const char *format))(va_list)
 {
 	fun_t fun[] = {
 		{"%c", print_char},
@@ -20,7 +20,7 @@ int (*get_function(char *f))(int, int)
 
 	while (fun[i].prin != NULL)
 	{
-		if (*fun[i].prin == *f)
+		if (*fun[i].prin == *format)
 			return (fun[i].g);
 		i++;
 	}
