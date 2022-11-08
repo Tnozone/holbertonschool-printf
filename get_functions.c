@@ -19,8 +19,10 @@ int (*get_func(const char *format))(va_list)
 
 	for (i = 0; p[i].t; i++)
 	{
-		if (*format == *(p[i].t)
+		if (*format == *(p[i].t))
+		{
 			return (p[i].f);
+		}
 	}
 	return (NULL);
 }
