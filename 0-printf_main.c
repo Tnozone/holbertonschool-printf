@@ -8,34 +8,54 @@
 
 int _printf(const char *format, ...)
 {
+	fun_t fun[] = {
+		{"%c", print_char},
+		{"%s", print_str},
+		{"%%", print_pct},
+		{NULL, NULL}
+		};
+	
 	unsigned int n = 0;
-	unsigned int i = 0;
-	unsigned int r = 0;
+
 	va_list ar;
 
 	va_start(ar, format);
 
-	if (format[0] == '%' || format[1] == '\0' || format == NULL)
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (0);
 
-	while (format[n] != '\0')
+	for (n = 0; format[n] != '\0'; n++)
 	{
-		if (format[n] == '%')
+		if (format[n] != '%')
 		{
-			i = 0;
-			while (get_function[i].prin != NULL)
-			{
-				if (format[n + 1] == get_function[i].prin[0])
-				{
-					r = r + get_function[i].g(ar);
-			
-				}
-			i++;
-			}
+			write(1, format, 1);
+			continue;
 		}
-		n++;
+		else
+		{
+			if (format[n + 1] == fun[i].prin[0])
+			{
+				fun[i].g(ar);
+			}
+			i++;
+		}
 	}
 
 	va_end(ar);
-	return (r);
+	return (length);
+}
+
+int length(*format)
+{
+	int i, len;
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		len++;
+		if (format[i] == %)
+		{
+			len -= 2;
+			len += ();
+		}
+	}
 }

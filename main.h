@@ -14,7 +14,7 @@
 typedef struct prin
 {
 	char *prin;
-	void (*g)(va_list(ar));
+	void (*g)(va_list ar);
 } fun_t;
 
 int _putchar(char c);
