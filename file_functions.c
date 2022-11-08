@@ -32,11 +32,11 @@ int print_str(va_list args)
 	{
 		_putchar(str[j]);
 	}
-  return (j);
+	return (j);
 }
 
 /**
- * print_pct
+ * print_pct - prints percent symbol
  * @args: arguments
  * Return: write(1, "%", 1)
  */
