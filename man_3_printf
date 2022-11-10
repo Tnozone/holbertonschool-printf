@@ -2,34 +2,34 @@
 .\"
 .TH man 3 "09 November 2022" "1.0" "_printf man page”
 
-.SH NAME                                                                                                                        
-_printf
+.SH NAME
+_printf \- printf
 
 .SH SYNOPSIS
-#include “main.h”
-                                                                                                                                
-int _printf(const char * format, …);
+_printf
+.RB {|FORMAT|}
+.RB [|ARGUMENTS|]...
 
 .SH DESCRIPTION
 The functions of _printf produce output according to a format. The function writes the output under the control of a format string that specifies how subsequent arguments are converted for output.
-
-Format of the format string
+.P
+.B Format of the format string
 The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
-
+.PP
 The overall syntax of a conversion specification is:
 %conversion
-
+.PP
 The arguments must correspond properly (after type promotion) with the conversion specifier, and each conversion specifier asks for the next argument (and it is an error if insufficiently many arguments are given).
-                                                                                                                                
-Conversion specifiers
+>p
+.B Conversion specifiers
 A character that specifies the type of conversion to be applied.
-
+.PP
 The conversion specifiers and their meanings are:
 
-.IP d, i
+.IP i, d
 The int argument is converted to signed decimal notation.
 
-.IP c
+.IP c
 The int argument is converted to an unsigned char, and the resulting character is written.
 
 .IP s
@@ -40,15 +40,8 @@ A '%' is written.  No argument is converted. The complete conversion�
 
 .SH RETURN VALUE                                                                                                                
 Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
-
-.SH EXAMPLES
-
 .SH SEE ALSO
 .BR printf(1)
-                                                                                                                                
-.SH BUGS
-No known bugs.
-
 .SH AUTHOR
 Othmane Bengharbi
 
