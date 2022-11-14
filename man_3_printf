@@ -38,10 +38,29 @@ The const char * argument is expected to be a pointer to an array 
 .IP %
 A '%' is written.  No argument is converted. The complete conversion specification is ‘%%’.
 
-.SH RETURN VALUE                                                                                                                
-Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+.SH RETURN VALUE                                                                Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+.SH EXAMPLES
+To print a string and a character:
+.PP
+.nf
+.RS
+#include "main.h"
+
+int main(void)
+{
+	_printf("String: [%s]\n", "I qm a string!");
+	_printf("Character:[%c]\n", 'H');
+}
+
+Output :
+String:[I an a string!]
+Character:[H]
+.RE
+.fi
+.PP
 .SH SEE ALSO
-.BR printf(1)
+.BR printf(3)
 .SH AUTHOR
-Othmane Bengharbi
+Othmane Bengharbi and Maxime Nocquet
 
